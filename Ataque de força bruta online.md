@@ -109,3 +109,8 @@ para tal cenário usaremos o comando:
 
 `hydra [IP ALVO] -L [WORDLIST USER] -P [WORDLIST PASS] http-post-form "/dvwa/login.php:username=^USER^&password=^PASS^&Login=Login:Login failed"`
 
+[foto ataque]
+
+Validando o retorno do ataque:
+
+[foto login dvwa]
