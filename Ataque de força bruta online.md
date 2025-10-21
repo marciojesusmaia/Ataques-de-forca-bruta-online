@@ -101,7 +101,7 @@ usaremos o DIRB para enumerar mas tambem poderiamos usar o GOBUSTER
 
 **ENUMERANDO DIRETÓRIOS COM O GOBUSTER**
 
-gobuster dir -u http://192.168.0.17 -w /usr/share/dirb/wordlists/common.txt
+gobuster dir -u http://[IP ALVO] -w [WORDLIST DIRETÓRIOS]
 
 <img width="1422" height="738" alt="06 gobusterscan" src="https://github.com/user-attachments/assets/e99b1a2a-f30d-40ba-a2ca-50a374712fee" />
 
