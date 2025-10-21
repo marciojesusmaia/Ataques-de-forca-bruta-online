@@ -1,6 +1,6 @@
 # Ataques de força bruta
 
-Ataque de força bruta é uma tecnica de ciberataque que usa tentativa e erro para descobrir senhas chaves de criptografias ou credenciais de login tentando todas as combinações possiveis até encontrar a correta.
+Ataque de força bruta é uma tecnica de ciberataque que usa tentativa e erro para descobrir senhas, chaves de criptografias ou credenciais de login tentando todas as combinações possiveis até encontrar a correta.
 A eficiencia do ataque depende da complexidade da senha. 
 Senhas muito complexas e muito grande se torna enviavel um ataque de força bruta.
 
@@ -33,7 +33,7 @@ Será feito o scan e o resultado salvo em um arquivo de texto com o nome scan.tx
 
 [Foto scan nmap]
 
-Podemos verificar que ha vários serviços rodando e iremos realizar ataques em alguns deles como: ftp.
+Podemos verificar que ha vários serviços rodando e iremos realizar ataques em alguns deles como: ftp e ssh.
 
 
 ----
@@ -41,7 +41,7 @@ Podemos verificar que ha vários serviços rodando e iremos realizar ataques em 
 
 ## INSTALANDO O MEDUSA
 
-Caso não esteja usando o Kali linux ou alguma outra distribuição, pode obter com o seguinte comando:
+Caso não esteja usando o Kali linux ou alguma outra distribuição que já tenha o medusa, pode obter com o seguinte comando:
 
 `sudo apt install medusa`
 
@@ -99,7 +99,7 @@ usaremos o DIRB para enumerar mas tambem poderiamos usar o GOBUSTER
 
 ### ATAQUE DE LOGIN USANDO O HYDRA
 
-Em nosso ambiente de ha uma pagina de login via formulário, faremos um brute force usando o HYDRA.
+Em nosso ambiente ha uma pagina de login via formulário e faremos um brute force usando o HYDRA.
 
 **INSTALAÇÃO DO HYDRA**
 
@@ -114,3 +114,11 @@ para tal cenário usaremos o comando:
 Validando o retorno do ataque:
 
 [foto login dvwa]
+
+
+----
+
+Uma outra técnica ao invés de usar várias senhas para um único usuário, é usar uma ou poucas senhas em vários usuários. Isso torna o ataque mais silencioso e discreto tornando mais difícil de causar alarmes no sistema fazendo com que o ataque seja bloqueado. Essa técnica é chamada de Password spraying.
+
+Por isso é muito importante o uso de senhas fortes e MFA, implementação de criptografia na comunicação e sempre usar protocolos com camadas de segurança.
+Bloquear a conta após um certo número de tentativas incorretas, monitoramento de IP e o uso de CAPTHA dificultam ataques ao sistema além de outras medidas de proteção como IDP/IPS. 
