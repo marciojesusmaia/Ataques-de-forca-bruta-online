@@ -1,19 +1,22 @@
 # Ataques de força bruta
 
-Ataque de força bruta é uma tecnica de ciberataque que usa tentativa e erro para descobrir senhas, chaves de criptografias ou credenciais de login tentando todas as combinações possiveis até encontrar a correta.
+<img width="500" height="400" alt="brute force" src="https://github.com/user-attachments/assets/c2616261-b139-4fa6-bb14-91166f61a69b" />
+
+
+Ataque de força bruta(ou brute force) é uma das tecnica de ciberataque que usa tentativa e erro para descobrir senhas, chaves de criptografias ou credenciais de login tentando todas as combinações possiveis até encontrar a correta.
 A eficiencia do ataque depende da complexidade da senha. 
 Senhas muito complexas e muito grande se torna enviavel um ataque de força bruta.
 
-Com isso, as melhores formas de se proteger contra ataques de força bruta é usar senhas fortes juntamente com um MFA. 
 
 ----------------------------------------------------------------------------------------------
+
 ### --ATENÇÃO--
 
 `OS COMANDOS E TECNICAS APRESENTADOS AQUI SÃO REALIZADOS EM AMBIENTE CONTROLADO E VULNERAVEL PARA TESTES. QUALQUER TESTES REALIZADOS FORA DE UM CENARIO CONTROLADO É POR SUA CONTA E RISCO.`
 
 ----------------------------------------------------------------------------------------------
 
-Usaremos  o sistema Metasploitable Para simular um ambiente em que faremos os ataques.
+Usaremos  o sistema Metasploitable para simular um ambiente em que faremos os ataques.
 
 Simulando um ambiente real e vulnerável, suponhamos que de alguma forma através de alguma técnica descobrimos o IP do nosso alvo.
 
@@ -62,7 +65,7 @@ Nesse cenário fizemos um brute force no serviço de FTP usando wordlists de usu
 <img width="1905" height="983" alt="02 bruteftp" src="https://github.com/user-attachments/assets/3c54ce00-1cf6-4119-ac9f-622270626a04" />
 
 
-com o resultado de sucesso podemos testar e validar o acesso logando no serviço.
+Com o resultado de sucesso podemos testar e validar o acesso logando no serviço.
 
 <img width="1131" height="982" alt="03 sectionftp" src="https://github.com/user-attachments/assets/55b1a0c4-709c-4deb-8237-a479c2c9d590" />
 
@@ -83,13 +86,13 @@ Para o brute force  ssh podemos usar o comando:
 ### ENUMERANDO DIRETORIOS
 
 Para enumerar diretórios podemos usar qualquer ferramenta que automatize esse processo para termos mais agilidade.
-usaremos o DIRB para enumerar mas tambem poderiamos usar o GOBUSTER
+Usaremos o DIRB para enumerar mas tambem poderiamos usar o GOBUSTER
 
 **INSTALANDO O DIRB**
 
 `sudo apt install dirb`
 
-**NSTALANDO O GOBUSTER**
+**INSTALANDO O GOBUSTER**
 
 `sudo apt install gobuster`
 
@@ -111,6 +114,9 @@ gobuster dir -u http://[IP ALVO] -w [WORDLIST DIRETÓRIOS]
 
 Em nosso ambiente ha uma pagina de login via formulário e faremos um brute force usando o HYDRA.
 
+<img width="1026" height="711" alt="07 dvwa" src="https://github.com/user-attachments/assets/3576dc37-5b1b-4b88-ad8c-748fe7fd328c" />
+
+
 **INSTALAÇÃO DO HYDRA**
 
 `sudo apt install hydra`
@@ -124,12 +130,33 @@ para tal cenário usaremos o comando:
 
 Validando o retorno do ataque:
 
-[foto login dvwa]
+<img width="956" height="769" alt="08 dvwalogin" src="https://github.com/user-attachments/assets/0a1105de-10da-442d-bba4-7533623432db" />
+
 
 
 ----
 
+
 Uma outra técnica ao invés de usar várias senhas para um único usuário, é usar uma ou poucas senhas em vários usuários. Isso torna o ataque mais silencioso e discreto tornando mais difícil de causar alarmes no sistema fazendo com que o ataque seja bloqueado. Essa técnica é chamada de Password spraying.
 
-Por isso é muito importante o uso de senhas fortes e MFA, implementação de criptografia na comunicação e sempre usar protocolos com camadas de segurança.
-Bloquear a conta após um certo número de tentativas incorretas, monitoramento de IP e o uso de CAPTHA dificultam ataques ao sistema além de outras medidas de proteção como IDP/IPS. 
+----
+
+### ALGUMAS DICAS PARA SE PROTEGER DE ATAQUES BRUTE FORCE
+
+
+**Para usuarios**
+
+* Usar senhas fortes e exclusivas
+* Ativar a autenticação de multiplos fatores
+* Utilizar um gerenciador de senhas
+* Evitar senhas baseadas em informações pessoais
+
+**Para sistemas**
+
+* Implementar limites de tentativas de login
+* Uasr firewall em aplicações web(WAF)
+* Monitorar e bloquear IP's suspeitos
+* Manter softwares e sistemas atualizados
+* Usar CAPTCHA
+
+
